@@ -1,0 +1,22 @@
+.card{
+    background-color: blue;
+    height:250px;
+    width:250px;
+    margin: 10px;
+    border-radius: 25px;
+}
+.image{
+    padding: 10px;
+}
+
+
+.matchcard{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px;
+    height:5px;
+    width:150px;
+    border-radius: 25px;
+    background: red;
+}
