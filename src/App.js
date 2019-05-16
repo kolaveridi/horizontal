@@ -27,7 +27,7 @@ import GridListTileBar from '@material-ui/core/GridListTileBar';
 import IconButton from '@material-ui/core/IconButton';
 
 import tileData from './tileData';
-
+var imageName = require('./image.png');
 const styles = theme => ({
   root: {
     display: 'flex',
@@ -42,11 +42,12 @@ const styles = theme => ({
     transform: 'translateZ(0)',
   },
   title: {
-    width:"150px",
-    background:"green",
+    width:"100%",
+    background:"white",
+    color:"black",
     display:"flex",
-    justifyContent:"centre",
-    paddingLeft:"5px"
+    paddingLeft:"5px",
+    justifyContent:"center"
 
   },
   titleBar: {
@@ -57,7 +58,21 @@ const styles = theme => ({
     width:"100px",
     height:"10px",
     background:"red"
+  },
+  imgFullHeight:{
+    height:"50%"
+  },
+  header :{
+    display:"flex",
+    flexDirection:"row",
+    justifyContent:"space-around"
+  },
+  titleWrap:{
+    display:"flex",
+    flexDirection:"row",
+    justifyContent:"center"
   }
+  
 });
 
 /**
@@ -89,13 +104,20 @@ class App extends React.Component {
         <GridList className={classes.gridList} cols={2.5}>
           {tileData.map(tile => (
             <GridListTile   key={tile.title}>
-              <img src={tile.img} alt={tile.title}  onClick ={this.onClick} />
-              <h1> Live</h1>
-              <GridListTileBar
+
+              <img   className ={classes.imgFullHeight} src={imageName } alt={tile.title}  onClick ={this.onClick} />
+              <div className={classes.header}>
+              <p> 70k Views </p>
+              <p ><strong> Live</strong></p>
+              </div>
+            
+               
+              <GridListTileBar  
                 title={'CSK vs MUM '}
                 classes={{
                   root: classes.titleBar,
                   title: classes.title,
+                  titleWrap:classes.titleWrap
                 }}
 
               />
